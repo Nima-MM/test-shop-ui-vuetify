@@ -1,5 +1,5 @@
 <template>
-  <HelloWorld />
+  <ProductList />
 </template>
 
 <script lang="ts" setup>

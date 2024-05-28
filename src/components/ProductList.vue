@@ -1,53 +1,29 @@
+
 <template>
   <div class="main">
     <h1>Hallo</h1>
-    <div class="products" :for="product in this.products">
-      {{ product }}
+    <div class="products" v-for="product in products" :key="product.id">
+      {{ product.name }} - {{ product.stock }}
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import api from "@/http/fetchApi";
+import { ref, onMounted } from 'vue';
+import { FetchApi } from '@/http/fetchApi';
 
-// // interface Products {
-// //   id: Number,
-// //   name: String,
-// //   stock: Number,
-// //   reservations: []
-// // }
-export default {
-  data() {
-    return {
-      products: {
-        id: Number,
-        name: String,
-        stock: Number,
-        reservations: [],
-      },
-    };
-  },
-  methods: {
-    // // let x = api(https://stock-manager.hooman.de/api/products)
-    // // fetch("https://stock-manager.hooman.de/api/products")
-    // //   .then(res => res.json())
-    // //   .then(res => {
-    // //       // this is not allowed
-    // //       // let a:Actor = <Actor>res;
+const fetchApi = new FetchApi("api/");
+const products = ref([]);
 
-    // //       // I use an intermediate variable a to get around this...
-    // //       let a:any = res; 
-    // //       let b:Actor = <Actor>a;
-    // //   })
-//     export class ApiHelper {
-
-// }
+products.value = await fetchApi.getRequest('products');
+console.log("PRODUCTS: ", products.value);
 
 </script>
 
 <style scoped>
 .main {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

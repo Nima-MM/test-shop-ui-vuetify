@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
 /dist
+Legacy
+server
 
 # local env files
 .env.local
