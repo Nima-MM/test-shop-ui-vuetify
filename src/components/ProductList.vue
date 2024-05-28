@@ -16,7 +16,7 @@ const fetchApi = new FetchApi("api/");
 const products = ref([]);
 
 products.value = await fetchApi.getRequest('products');
-console.log("PRODUCTS: ", products.value);
+// console.log("PRODUCTS: ", products.value);
 
 </script>
 
