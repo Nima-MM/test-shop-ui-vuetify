@@ -2,13 +2,20 @@ export class FetchApi {
     public baseUrl: string;
     public complete: boolean = false;
   
+    /** 
+     * @constructor 
+     * @argument baseUrl pass the root/basic URL 
+     * */
     public constructor(baseUrl: string) {
       this.baseUrl = baseUrl;
     }
   
-    getRequest<T>(url: string): Promise<T> {
+    /** 
+     * @argument route pass in the Endpoint/Resource Path e.g. /products 
+     * */ 
+    async requestGet<T>(route: string): Promise<T> {
       // console.log("Tescht Link: ", this.baseUrl + url);
-      return fetch(this.baseUrl + url).then(
+      return fetch(this.baseUrl + route).then(
         response => {
           if (!response.ok) {
             throw new Error(response.statusText);

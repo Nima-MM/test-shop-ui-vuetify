@@ -5,7 +5,7 @@
  */
 
 // TestServer/DB
-import './server/server.js';
+// import './server/server.js';
 
 // Plugins
 import { registerPlugins } from '@/plugins'
