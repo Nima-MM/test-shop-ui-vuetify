@@ -5,13 +5,7 @@
 </template>
 
 <script setup lang="ts">
-    import { ref, onMounted } from 'vue'
-    import  { FetchApi }  from '@/http/fetchApi'
+    import { useProductTable } from './ProductTable';
 
-    const fetchApi = new FetchApi("https://stock-manager.hooman.de/api/");
-    const products = ref([]);
-            
-    products.value = await fetchApi.requestGet("products");
-    // console.log("PRODUCTS.VALUE: ", products.value);
-
+    const { products } = await useProductTable();
 </script>
