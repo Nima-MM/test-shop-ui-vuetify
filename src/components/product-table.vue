@@ -4,8 +4,4 @@
     </v-container>
 </template>
 
-<script setup lang="ts">
-    import { useProductTable } from './ProductTable';
-
-    const { products } = await useProductTable();
-</script>
+<script src="./product-table" lang="ts"></script>
