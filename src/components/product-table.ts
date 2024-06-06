@@ -15,7 +15,13 @@ export default defineComponent({
 
         async function loadProducts() {
             isLoading.value = true;
+            try{
                 products.value = await fetchApi.requestGet("products");
+            } catch(err) {
+                console.error("Fetching products failed. ERR: ", err)
+            } finally {
+                isLoading.value = false;
+            }
         }
 
         return { products };
