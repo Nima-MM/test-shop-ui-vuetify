@@ -1,5 +1,6 @@
 import { defineAsyncComponent, defineComponent, onBeforeMount, ref } from 'vue';
 import { FetchApi } from '@/http/fetchApi';
+import { error } from 'console';
 
 
 export default defineComponent({
@@ -13,8 +14,8 @@ export default defineComponent({
         })
 
         async function loadProducts() {
-            this.isLoading = true;
-            products.value = await fetchApi.requestGet("products");
+            isLoading.value = true;
+                products.value = await fetchApi.requestGet("products");
         }
 
         return { products };
