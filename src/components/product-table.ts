@@ -24,6 +24,6 @@ export default defineComponent({
             }
         }
 
-        return { products };
+        return { products, isLoading };
     }
 })
