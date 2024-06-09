@@ -13,7 +13,7 @@ export default defineComponent({
       loadProducts();
     });
 
-    async function loadProducts() {
+    async function loadProducts(): Promise<void> {
       isLoading.value = true;
       try {
         products.value = await fetchApi.requestGet("products");
