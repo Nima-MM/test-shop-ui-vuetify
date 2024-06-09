@@ -17,7 +17,8 @@ export default defineComponent({
       try {
         products.value = await fetchApi.requestGet("products");
       } catch (err) {
-        console.error("Fetching products failed. ERR: ", err);
+        error.value = `Fetching products failed. Error: ${err.message}`;
+        console.error(error.value);
       } finally {
         isLoading.value = false;
       }
