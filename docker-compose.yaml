@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   db-container-1:
-    container_name: db_container_shop
+    container_name: db_shop_container
     image: postgres:16.3
     environment:
       POSTGRES_USER: admin_shop_db
@@ -12,3 +12,6 @@ services:
     volumes:
       - v_shop_db:/var/lib/postgresql
     restart: always
+  pgadmin:
+    container_name: pgA_db_shop_container
+    image: dpage/pgadmin4
