@@ -18,3 +18,5 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: marashi.nima@outlook.de
       PGADMIN_DEFAULT_PASSWORD: Hoom-IT1337-pg
+    ports:
+     - 127.0.0.1:5050:80
