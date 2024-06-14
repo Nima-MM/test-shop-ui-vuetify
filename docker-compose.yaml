@@ -3,3 +3,7 @@ services:
   db-container-1:
     container_name: db_container_shop
     image: postgres:16.3
+    environment:
+      POSTGRES_USER: admin_shop_db
+      POSTGRES_PASSWORD: Hoom-IT1337
+      POSTGRES_DB: hoom_shop_db
