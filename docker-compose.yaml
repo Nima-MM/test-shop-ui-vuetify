@@ -7,3 +7,5 @@ services:
       POSTGRES_USER: admin_shop_db
       POSTGRES_PASSWORD: Hoom-IT1337
       POSTGRES_DB: hoom_shop_db
+    ports:
+      - "5432:5432"
