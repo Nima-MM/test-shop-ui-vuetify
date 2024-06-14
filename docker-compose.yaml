@@ -15,3 +15,6 @@ services:
   pgadmin:
     container_name: pgA_db_shop_container
     image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: marashi.nima@outlook.de
+      PGADMIN_DEFAULT_PASSWORD: Hoom-IT1337-pg
