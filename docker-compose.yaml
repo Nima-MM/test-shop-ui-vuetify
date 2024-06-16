@@ -10,7 +10,7 @@ services:
     ports:
       - 127.0.0.1:5432:5432
     volumes:
-      - v_shop_db:/var/lib/postgresql
+      -  /${HOME}/nima/db:/var/lib/postgresql
     restart: always
   pgadmin:
     container_name: pgA_db_shop_container
