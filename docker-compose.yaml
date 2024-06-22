@@ -10,7 +10,21 @@ services:
     ports:
       - 5432:5432
     volumes:
-      -  /${HOME}/nima/db:/var/lib/postgresql
+      - /${HOME}/shop_data_import:/docker-entrypoint-initdb.d
+      - hoom_shop_db_data:/var/lib/postgresql/data
+    restart: always
+  db-container-2:
+    container_name: db_iot_container
+    image: postgres:16.3
+    environment:
+      POSTGRES_USER: admin_db
+      POSTGRES_PASSWORD: Hoom-IT1337
+      POSTGRES_DB: dpma
+    ports:
+      - 5433:5432
+    volumes:
+      - /${HOME}/postgresIoT_data_import:/docker-entrypoint-initdb.d
+      - iot_db_data:/var/lib/postgresql/data
     restart: always
   pgadmin:
     container_name: pgA_db_shop_container
@@ -20,3 +34,6 @@ services:
       PGADMIN_DEFAULT_PASSWORD: Hoom-IT1337-pg
     ports:
      - 5050:80
+volumes: 
+  hoom_shop_db_data:
+  iot_db_data:
