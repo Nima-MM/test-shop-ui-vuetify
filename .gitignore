@@ -1,8 +1,15 @@
 .DS_Store
 node_modules
 /dist
+
+# mirage.js
 server
+
+# local Legacy directory with all kind of crap
 Legacy
+
+# local testing stuff for study
+src/pages/test.vue
 
 # local env files
 .env.local
