@@ -1,8 +1,16 @@
 .DS_Store
 node_modules
 /dist
+
+# miracle.js if stock-manager goes down
 server
+
+# legacy code/comments that actually no one needs and needs to be deleted :D
 Legacy
+
+# testing stuff
+src/components/HelloWorld.vue
+src/pages/test.vue
 
 # local env files
 .env.local
