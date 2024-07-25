@@ -2,6 +2,7 @@
 node_modules
 /dist
 
+<<<<<<< HEAD
 # miracle.js if stock-manager goes down
 server
 
@@ -10,6 +11,15 @@ Legacy
 
 # testing stuff
 src/components/HelloWorld.vue
+=======
+# mirage.js
+server
+
+# local Legacy directory with all kind of crap
+Legacy
+
+# local testing stuff for study
+>>>>>>> origin/main
 src/pages/test.vue
 
 # local env files
