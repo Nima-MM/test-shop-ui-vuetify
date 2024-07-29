@@ -46,7 +46,7 @@
             </v-card>
           </v-dialog>
           <v-btn class="mb-2" color="primary" dark @click="dialog = true">
-            Delete Item
+            Delete Product
           </v-btn>
         </v-list-item>
       </v-list>

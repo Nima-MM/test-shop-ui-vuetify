@@ -1,5 +1,5 @@
 export default interface Product {
   name: string;
-  stock: number;
+  stock?: number;
   reservations?: [];
 }

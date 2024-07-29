@@ -2,15 +2,16 @@
   <v-dialog v-model="dialog" max-width="500">
     <v-card max-width="400"
       ><v-card-title>
-        <span class="text-h5">NEW uh yEah</span>
+        <span class="text-h5">CREATE NEW PRODUCT</span>
       </v-card-title>
       <v-card-text>
         <v-container>
           <v-row>
             <v-col cols="20" md="6" sm="20">
-              <v-text-field v-model="product.name" placeholder="Produktname"
-                >P</v-text-field
-              >
+              <v-text-field
+                v-model="product.name"
+                placeholder="Produktname"
+              ></v-text-field>
             </v-col>
             <v-col cols="20" md="6" sm="20">
               <v-text-field
@@ -37,7 +38,7 @@
     </v-card>
   </v-dialog>
   <v-btn class="mb-2" color="primary" dark @click="dialog = true">
-    New Item
+    new product
   </v-btn>
 </template>
 

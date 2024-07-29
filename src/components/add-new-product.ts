@@ -13,7 +13,6 @@ export default defineComponent({
     const productTableRef = ref<any>(null);
     const product = ref<Product>({
       name: "",
-      stock: 0,
       reservations: [],
     });
 
