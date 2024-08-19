@@ -38,7 +38,7 @@
     </v-card>
   </v-dialog>
   <v-btn class="mb-2" color="primary" dark @click="dialog = true">
-    new product
+    nw product
   </v-btn>
 </template>
 
