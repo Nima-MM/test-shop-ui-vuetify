@@ -7,16 +7,21 @@
         <v-container>
           <v-col>
             <v-text-field placeholder="Produktname">
-              
             </v-text-field>
           </v-col>
           <v-col>
             <v-text-field placeholder="Stückzahl">
-              
             </v-text-field>
           </v-col>
         </v-container>
       </v-card-text>
+
+      <v-card-actions>
+        <v-btn text="Cancel" @click="dialog = false"></v-btn>
+      </v-card-actions>
+      <v-card-actions>
+        <v-btn text="Save"></v-btn>
+      </v-card-actions>
     </v-card>
   </v-dialog>
   <v-btn class="mb-2" color="primary" dark @click="dialog = true">
