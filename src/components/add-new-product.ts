@@ -3,5 +3,9 @@ import { FetchApi } from "../Legacy/src/http/fetch-api";
 import Product from "./products-interface";
 
 export default defineComponent ({
-    setup(){}
+    setup(){
+        const dialog = ref(false);
+
+        return { dialog }
+    }
 })
