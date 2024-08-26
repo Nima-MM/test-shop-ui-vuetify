@@ -7,11 +7,21 @@ export default defineComponent ({
         const fetchApi = new FetchApi(
             "https://stock-manager.hooman.de/api/"
         );
-        const respone = ref<string | null>(null);
+        const response = ref<string | null>(null);
         const error = ref<string | null>(null);
         const dialog = ref(false);
         const product = ref<Product>({name: ""});
         
-        return { dialog }
+        const save = async function (): Promise<void> {
+            try {
+                response.value = await fetchApi.requestPost("add", product.value);
+            } catch(err){ 
+                error.value = `POST producta failed: Error: ${err.message}`;
+                console.error("Error details: ", err.value);
+            } finally {
+                dialog.value = false;
+            }
+        }
+        return { dialog, product, save }
     }
 })
