@@ -6,11 +6,11 @@
       <v-card-text>
         <v-container>
           <v-col>
-            <v-text-field placeholder="Produktname">
+            <v-text-field v-model="product.name" placeholder="Produktname">
             </v-text-field>
           </v-col>
           <v-col>
-            <v-text-field placeholder="Stückzahl">
+            <v-text-field v-model="product.stock" placeholder="Stückzahl">
             </v-text-field>
           </v-col>
         </v-container>
@@ -20,7 +20,7 @@
         <v-btn text="Cancel" @click="dialog = false"></v-btn>
       </v-card-actions>
       <v-card-actions>
-        <v-btn text="Save"></v-btn>
+        <v-btn text="Save" @click="save"></v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
