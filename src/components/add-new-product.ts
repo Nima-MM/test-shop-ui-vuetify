@@ -7,6 +7,7 @@ export default defineComponent ({
         const fetchApi = new FetchApi(
             "https://stock-manager.hooman.de/api/"
         );
+        const respone = ref<string | null>(null);
         const error = ref<string | null>(null);
         const dialog = ref(false);
         const product = ref<Product>({name: ""});
