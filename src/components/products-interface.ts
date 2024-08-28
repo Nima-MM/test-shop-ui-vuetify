@@ -1,6 +1,6 @@
 export default interface Product {
-  id: number;
+  id?: number;
   name: string;
-  stock: number;
+  stock?: number;
   reservations?: [];
 }

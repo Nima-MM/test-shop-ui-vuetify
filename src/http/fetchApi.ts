@@ -11,10 +11,11 @@ export class FetchApi {
   }
 
   /**
-   * @argument route pass in the Endpoint/Resource Path e.g. /products
+   * @argument endpoint pass in the Endpoint/Resource Path e.g. /products
    * */
-  async requestGet<T>(route: string): Promise<T> {
-    return fetch(this.baseUrl + route)
+
+  async requestGet<T>(endpoint: string): Promise<T> {
+    return fetch(this.baseUrl + endpoint)
       .then((response) => {
         if (!response.ok) {
           throw new Error(
@@ -26,5 +27,24 @@ export class FetchApi {
       .then((data) => {
         return data;
       });
+    }
+      
+  /**
+   * @argument endpoint pass in the Endpoint/Resource Path e.g. /products
+   * */
+
+  async requestPost<T>(endpoint: string, boody: any): Promise<T> {
+    return fetch(this.baseUrl + endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(boody),
+    }).then((response) => {
+        if (!response.ok) {
+          throw new Error(
+            `POST-HTTP error! status: ${response.status} - ${response.statusText}`
+          );
+        }
+        return response.json() as Promise<T>;
+      })
+    }
   }
-}

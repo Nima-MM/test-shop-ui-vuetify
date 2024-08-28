@@ -2,13 +2,14 @@
 node_modules
 /dist
 
-# mirage.js
+# miracle.js if stock-manager goes down
 server
 
-# local Legacy directory with all kind of crap
+# legacy code/comments that actually no one needs and needs to be deleted :D
 Legacy
 
-# local testing stuff for study
+# testing stuff
+src/components/HelloWorld.vue
 src/pages/test.vue
 
 # local env files

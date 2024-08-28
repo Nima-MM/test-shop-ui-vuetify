@@ -4,11 +4,15 @@
 
     <v-navigation-drawer>
       <v-list>
-        <v-list-item title="Navigation drawer"></v-list-item>
+        <v-list-item title="Navigation drawer">
+          <!-- component:add-new-product  -->
+          <add-new-product></add-new-product>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
     <v-main class="d-flex align-center justify-center" style="min-height: 300px;">
+      <!-- component:product-table  -->
       <product-table />
     </v-main>
   </v-layout>
