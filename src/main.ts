@@ -19,8 +19,8 @@ import { createPinia } from "pinia";
 
 const app = createApp(App);
 const pinia = createPinia();
+app.use(pinia);
 
 registerPlugins(app);
 
-app.use(pinia);
 app.mount("#app");
