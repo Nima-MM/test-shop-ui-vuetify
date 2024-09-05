@@ -3,10 +3,10 @@
     <v-data-table
       v-model="selected"
       :loading="isLoading"
-      :items="products"
+      :items="productStore.getState"
       show-select
     >
-            <template v-slot:loading>
+      <template v-slot:loading>
         <v-skeleton-loader type="table-row@10"></v-skeleton-loader>
       </template>
     </v-data-table>
