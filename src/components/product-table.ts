@@ -1,13 +1,13 @@
 import { defineComponent, onBeforeMount, ref } from "vue";
 import { FetchApi } from "@/http/fetchApi";
-import Product from "./products-interface";
+import { useProductsStore } from "../stores/all-products-store";
 
 export default defineComponent({
   setup() {
     const fetchApi = new FetchApi("https://stock-manager.hooman.de/api/");
-    const products = ref<[Product]>();
     const isLoading = ref(false);
     const error = ref<string | null>(null);
+    const productStore = useProductsStore();
 
     onBeforeMount(() => {
       loadProducts();
@@ -16,7 +16,8 @@ export default defineComponent({
     async function loadProducts(): Promise<void> {
       isLoading.value = true;
       try {
-        products.value = await fetchApi.requestGet("products");
+        productStore.setState(await fetchApi.requestGet("products"));
+        console.log("Fetched: ", productStore.getState);
       } catch (err) {
         error.value = `Fetching products failed. Error: ${err.message}`;
         console.error(error.value);
@@ -25,6 +26,6 @@ export default defineComponent({
       }
     }
 
-    return { products, isLoading, error };
+    return { productStore, isLoading, error };
   },
 });
