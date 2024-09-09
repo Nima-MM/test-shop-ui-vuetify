@@ -12,15 +12,7 @@ export default defineComponent({
     const product = ref<Product>({ name: "" });
     const productStore = useProductsStore();
 
-    // Watcher to look when products are fetched into the product-table
-    watch(
-      () => productStore.getState,
-      (newProducts) => {
-        console.log("Products updated: ", newProducts);
-      },
-      { immediate: false }
-    );
-
+    // TO-REFACTOR - feedback for wrong input of user
     const save = async function (): Promise<void> {
       try {
         response.value = await fetchApi.requestPost(

@@ -11,6 +11,7 @@
             <v-col cols="20" md="6" sm="20">
               <v-text-field
                 v-model="id"
+                type="number"
                 placeholder="Produkt-Id"
               ></v-text-field>
             </v-col>

@@ -11,14 +11,17 @@ export const useProductsStore = defineStore("productsStore", () => {
     products.value = product;
   }
 
+  // TO-REFACTOR - the id is not visible...
   function addProduct(newProduct: Product) {
     products.value.push(newProduct);
   }
 
+  // TO-REFACTOR - ignores number typo - yet to convert declaritive into number...
+  // TO-REFACTOR - feedback for wrong input of user
   function delProduct(productId: number) {
+    productId = Number(productId);
     console.log("productId value + (typeof): ", productId, typeof productId);
     console.log("products proxy Array: ", products.value);
-
     if (productId >= 0) {
       const index = products.value.findIndex(
         (product) => product.id === productId

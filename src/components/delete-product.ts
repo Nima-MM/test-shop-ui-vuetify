@@ -15,6 +15,7 @@ export default defineComponent({
     const dialog = ref(false);
     const productStore = useProductsStore();
 
+    // TO-REFACTOR - feedback for wrong input of user
     const del = async () => {
       if (id.value !== null || id.value !== undefined) {
         try {
