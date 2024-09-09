@@ -27,24 +27,39 @@ export class FetchApi {
       .then((data) => {
         return data;
       });
-    }
-      
+  }
+
   /**
    * @argument endpoint pass in the Endpoint/Resource Path e.g. /products
    * */
-
   async requestPost<T>(endpoint: string, boody: any): Promise<T> {
     return fetch(this.baseUrl + endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(boody),
     }).then((response) => {
-        if (!response.ok) {
-          throw new Error(
-            `POST-HTTP error! status: ${response.status} - ${response.statusText}`
-          );
-        }
-        return response.json() as Promise<T>;
-      })
-    }
+      if (!response.ok) {
+        throw new Error(
+          `POST-HTTP error! status: ${response.status} - ${response.statusText}`
+        );
+      }
+      return response.json() as Promise<T>;
+    });
   }
+
+  /**
+   * @argument endpoint pass in the Endpoint/Resource Path e.g. /{id}
+   * */
+  async requestDel<T>(endpoint: number): Promise<T> {
+    return fetch(this.baseUrl + endpoint, {
+      method: "DELETE",
+    }).then((response) => {
+      if (!response.ok) {
+        throw new Error(
+          `DELETE-HTTP error! status: ${response.status} - ${response.statusText}`
+        );
+      }
+      return response.json() as Promise<T>;
+    });
+  }
+}
