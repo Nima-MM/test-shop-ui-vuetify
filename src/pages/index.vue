@@ -7,11 +7,16 @@
         <v-list-item title="Navigation drawer">
           <!-- component:add-new-product  -->
           <add-new-product></add-new-product>
+          <!-- component:delete-product  -->
+          <delete-product></delete-product>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
-    <v-main class="d-flex align-center justify-center" style="min-height: 300px;">
+    <v-main
+      class="d-flex align-center justify-center"
+      style="min-height: 300px"
+    >
       <!-- component:product-table  -->
       <product-table />
     </v-main>
@@ -19,5 +24,5 @@
 </template>
 
 <script lang="ts" setup>
-  //
+//
 </script>
