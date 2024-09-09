@@ -15,5 +15,24 @@ export const useProductsStore = defineStore("productsStore", () => {
     products.value.push(newProduct);
   }
 
-  return { getState, setState, addProduct };
+  function delProduct(productId: number) {
+    console.log("productId value + (typeof): ", productId, typeof productId);
+    console.log("products proxy Array: ", products.value);
+
+    if (productId >= 0) {
+      const index = products.value.findIndex(
+        (product) => product.id === productId
+      );
+      console.log("INDEX: ", index);
+      if (index !== -1) {
+        products.value.splice(index, 1);
+      } else {
+        console.error("Idd nicht vergeben!");
+      }
+    } else {
+      console.error("Id nicht vergeben!");
+    }
+  }
+
+  return { getState, setState, addProduct, delProduct };
 });

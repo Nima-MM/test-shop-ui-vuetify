@@ -11,13 +11,15 @@ export default defineComponent({
     );
     const error = ref<string | null>(null);
     const response = ref<any>(null);
-    const id = ref<number>();
+    const id = ref<number>(0);
     const dialog = ref(false);
+    const productStore = useProductsStore();
 
     const del = async () => {
       if (id.value !== null || id.value !== undefined) {
         try {
           // TO-REFACTOR - wants init value - yet to fix - STORY 10 - but actualy works...
+          productStore.delProduct(id.value);
           response.value = await fetchApi.requestDel(id.value);
         } catch (err) {
           error.value = `Deleting prdouct failed: Error: ${err.message}`;
