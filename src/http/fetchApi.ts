@@ -59,7 +59,7 @@ export class FetchApi {
           `DELETE-HTTP error! status: ${response.status} - ${response.statusText}`
         );
       }
-      return response.json() as Promise<T>;
+      return response.status as unknown as T;
     });
   }
 }
